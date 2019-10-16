@@ -1,31 +1,33 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 15 11:30:20 2019
-
-@author: alest
-"""
 
 def blackjack (x):
     import random
-    a = []*13
-    i = 2
-    while i <= 10:
-        a[i-2] = i
-        i += 1
-        Valete = 10
-        Dama = 10
-        Rei = 10 
-        Ás = 11 
-        a [9] = Valete
-        a [10] = Dama
-        a [11] = Rei
-        a [12] = Ás
-    dinheiro = 200
+    a = [2,3,4,5,6,7,8,9,10]
+    Valete = 10
+    Dama = 10
+    Rei = 10
+    Ás = 11 
+    a [9] = Valete
+    a [10] = Dama
+    a [11] = Rei
+    a [12] = Ás
+    dinheiro = x
     valorinicial = 10
-    aposta = x*valorinicial
+    aposta = input("Qual o valor que você quer apostar? Você tem {0} reais disponíveis".format(dinheiro))
+    while aposta <= dinheiro:
+        jogo = True
+        if aposta > dinheiro or aposta < 0:
+            jogo = False
+            if jogo == False:
+                print("Fim de jogo")
+                break
+        if aposta == "fim":
+            print("Este é o fim do jogo!")
+            break
     dinheiro -= aposta
     contador = 0
     contadordeas = 0
+        
     if aposta >= valorinicial:
         y = random.randint(a[0],a[13])
         z = random.randint(a[0],a[13])
@@ -69,19 +71,8 @@ def blackjack (x):
                                     else:
                                         dinheiro = dinheiro + aposta
                                         
-                                        
-                                        
-                                        
-                        
-                        
-                        
-                        
-                
-            
-            
-        
-        
-        
-        
+a = 1000
+b = blackjack(blackjack(a))
+print(b)
 
     
